@@ -16,7 +16,12 @@ function playerSelection(){
     let selection = prompt("Please select your weapon").toLowerCase();
     selection = selection.charAt(0).toUpperCase() + selection.slice(1);
 
-    return selection;
+    if(selection != 'Rock' && selection != 'Paper' && selection != 'Scissors'){
+        alert("That's not a weapon, try again.")
+        playerSelection()
+    } else {
+        return selection;
+    }
 }
 
 
