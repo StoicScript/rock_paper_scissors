@@ -7,6 +7,9 @@ const player = document.getElementById('playerScore')
 const computer = document.getElementById('computerScore')
 const winner = document.getElementById('winner')
 const resetBtn = document.getElementById('reset')
+const winImg = document.getElementById('harold-win')
+const loseImg = document.getElementById('harold-lose')
+
 
 let compScore = 0;
 let playerScore = 0;
@@ -15,6 +18,8 @@ player.innerText = `You: ${playerScore}`;
 computer.innerText = `Computer: ${compScore}`;
 results.innerText = 'Select your weapon to begin!'
 resetBtn.hidden = true;
+winImg.hidden = true;
+loseImg.hidden = true;
 
 weapons.forEach(weapon => {
     weapon.addEventListener('click', (e) => {
@@ -28,9 +33,11 @@ weapons.forEach(weapon => {
             if(playerScore === 5){
                 winner.innerText = 'YOU WIN!'
                 reset();
+                winImg.hidden = false;
             } else if(compScore === 5){
                 winner.innerText = 'YOU LOSE'
                 reset();
+                loseImg.hidden = false;
             }
         })
 })
@@ -44,6 +51,8 @@ resetBtn.addEventListener('click', () => {
     winner.innerText = '';
     buttons.hidden = false;
     resetBtn.hidden = true;
+    winImg.hidden = true;
+    loseImg.hidden = true;
 })
 
 function reset(){
@@ -83,6 +92,6 @@ function playRound(playerSelection, computerSelection){
         compScore += 1;
         return "You lose! Rock beats Scissors."
     } else {
-        return "Tie Game!"
+        return `Tie Game! You both chose ${playerSelection}.`
     }
 }
