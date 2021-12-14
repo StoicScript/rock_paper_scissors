@@ -19,7 +19,7 @@ const sciImg = "<img src='./scissors.png' width=150px>"
 let compScore = 0;
 let playerScore = 0;
 
-player.innerText = `You: ${playerScore}`;
+player.innerText = `Player: ${playerScore}`;
 computer.innerText = `Computer: ${compScore}`;
 results.innerText = 'Select your weapon to begin!'
 resetBtn.hidden = true;
@@ -31,7 +31,7 @@ weapons.forEach(weapon => {
          let selection = e.target.id;
          let compSelection = computerSelection();
          results.textContent = (playRound(selection, compSelection));
-         player.innerText = `You: ${playerScore}`;
+         player.innerText = `Player: ${playerScore}`;
          computer.innerText = `Computer: ${compScore}`;
          winner.innerText = '';
             if(playerScore === 5){
