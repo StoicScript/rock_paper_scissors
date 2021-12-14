@@ -1,5 +1,55 @@
 console.log("hello bitches")
 
+const buttons = document.querySelectorAll('.weapon')
+const results = document.getElementById('results')
+const player = document.getElementById('playerScore')
+const computer = document.getElementById('computerScore')
+const winner = document.getElementById('winner')
+const resetBtn = document.getElementById('reset')
+
+let compScore = 0;
+let playerScore = 0;
+
+player.innerText = `You: ${playerScore}`;
+computer.innerText = `Computer: ${compScore}`;
+results.innerText = 'Select your weapon to begin!'
+
+resetBtn.hidden = true;
+
+resetBtn.addEventListener('click', () => {
+    playerScore = 0;
+    compScore = 0;
+    player.innerText = `You: ${playerScore}`;
+    computer.innerText = `Computer: ${compScore}`;
+    results.innerText = 'Select your weapon to begin!'
+    winner.innerText = ''
+    buttons.forEach(button => button.hidden = false)
+    resetBtn.hidden = true;
+})
+
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+         let selection = e.target.textContent;
+         let compSelection = computerSelection();
+         results.textContent = (playRound(selection, compSelection));
+         console.log(playerScore, compScore);
+         player.innerText = `You: ${playerScore}`;
+         computer.innerText = `Computer: ${compScore}`;
+         winner.innerText = '';
+            if(playerScore === 5){
+                winner.innerText = 'YOU WIN!'
+                reset();
+            } else if(compScore === 5){
+                winner.innerText = 'YOU LOSE'
+                reset();
+            }
+        })
+})
+
+function reset(){
+    buttons.forEach(button => button.hidden = true)
+    resetBtn.hidden = false;
+}
 
 function computerSelection(){
     let selection = (Math.floor(Math.random()*3)+1);
@@ -11,19 +61,6 @@ function computerSelection(){
         return "Scissors"
     }
 }
-
-function playerSelection(){
-    let selection = prompt("Please select your weapon").toLowerCase();
-    selection = selection.charAt(0).toUpperCase() + selection.slice(1);
-
-    if(selection != 'Rock' && selection != 'Paper' && selection != 'Scissors'){
-        alert("That's not a weapon, try again.")
-        playerSelection()
-    } else {
-        return selection;
-    }
-}
-
 
 function playRound(playerSelection, computerSelection){
 
@@ -37,25 +74,37 @@ function playRound(playerSelection, computerSelection){
         playerScore += 1;
         return "You win! Scissors beats Paper."
     } else if(playerSelection === 'Rock' && computerSelection === 'Paper'){
-        computerScore += 1;
+        compScore += 1;
         return "You lose! Paper beats Rock."
     } else if(playerSelection === 'Paper' && computerSelection === 'Scissors'){
-        computerScore += 1;
+        compScore += 1;
         return "You lose! Scissors beats Paper."
     } else if(playerSelection === 'Scissors' && computerSelection === 'Rock'){
-        computerScore += 1;
+        compScore += 1;
         return "You lose! Rock beats Scissors."
     } else {
         return "Tie Game!"
     }
 }
 
-let playerScore = 0;
-let computerScore = 0
 
-function game(){
-    for( let i = 0; i < 5; i++){
-        console.log(playRound(playerSelection(), computerSelection()));
-    }
-    console.log(`Game over. Computer: ${computerScore} - Player: ${playerScore}.`)  
-}
+
+// function playerSelection(){
+//     let selection = prompt("Please select your weapon").toLowerCase();
+//     selection = selection.charAt(0).toUpperCase() + selection.slice(1);
+
+//     if(selection != 'Rock' && selection != 'Paper' && selection != 'Scissors'){
+//         alert("That's not a weapon, try again.")
+//         playerSelection()
+//     } else {
+//         return selection;
+//     }
+// }
+
+
+// function game(){
+//     for( let i = 0; i < 5; i++){
+//         console.log(playRound(playerSelection(), computerSelection()));
+//     }
+//     console.log(`Game over. Computer: ${computerScore} - Player: ${playerScore}.`)  
+// }
