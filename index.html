@@ -5,21 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
     
-    <h1>Rock Paper Scissors</h1>
-    <button id='rock-btn' class='weapon'>Rock</button>
-    <button id='paper-btn'class='weapon'>Paper</button>
-    <button id='scissors-btn' class='weapon'>Scissors</button>
-    <div id='results'></div>
-    <h3>Scores</h3>
-    <div id='playerScore'></div>
-    <div id='computerScore'></div>
+    <div class="header">
+        <h1>Rock Paper Scissors</h1>
+    </div>
+
+    <div class="buttons">
+        <button id='rock-btn'><img id='Rock' class='weapon' src="./rock.png" width=150px></button>
+        <button id='paper-btn'><img id='Paper' class='weapon' src="./paper.png" width=150px></button>
+        <button id='scissors-btn'><img id='Scissors' class='weapon' src="./scissors.png" width=150px></button>
+    </div>
+
+    <div id='results' class='results'></div>
+
+    <div class="scores">
+        <h3>Score</h3>
+        <div id='playerScore' class="score"></div>
+        <div id='computerScore' class="score"></div>
+    </div>
+
     <h1 id='winner'></h1>
     <button id='reset'>Play again</button>
+
 </body>
 
 </html>
