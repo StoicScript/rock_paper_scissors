@@ -1,15 +1,30 @@
 body{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(245, 245, 245);
     font-family: helvetica;
     text-align: center;
 }
 
-.buttons{
-    margin: 20px 0px 20px 0px;
+h3{
+    font-weight: normal;
+    text-decoration: underline;
+    }
+
+p{
+    font-size: 20p;
 }
 
-.weapon{
+.wpnbtn{
     margin: 5px;
+    background-color: white;
+}
+
+.wpnbtn:hover{
+    border: 3px solid rgb(255, 0, 0);    
+    transform: scale(1.03);
+}
+
+.buttons{
+    margin: 20px 0px 20px 0px;
 }
 
 .results{
@@ -22,7 +37,20 @@ display: inline;
 font-weight: bold;
 }
 
-h3{
-font-weight: normal;
-text-decoration: underline;
+.resultImg{
+    margin-bottom:30px;
+}
+
+#reset {
+    font-size: 15px;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 10px;
+    background-color: red;
+}
+
+#reset:hover {
+    background-color: rgb(207, 4, 4);
+    color: rgb(192, 192, 192);
+    transform: scale(1.05);
 }
