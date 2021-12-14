@@ -20,6 +20,7 @@ h3{
 
 h1{
     font-size: 50px;
+    font-family: 'roboto mono';
 }
 
 .header{
@@ -50,8 +51,9 @@ h1{
     font-size: 120px;
     background-color: white;
     height: 150px;
-    width: auto;
+    width: 150px;
     border-radius: 5px;
+    color: black;
 }
 
 .scores{
@@ -71,12 +73,12 @@ h1{
 .wpnbtn{
     margin: 5px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .wpnbtn:hover{
     border: 2.5px solid rgb(72, 197, 135);    
-    border-radius: 5px;
+    border-radius: 7px;
     transform: scale(1.03);
 }
 
