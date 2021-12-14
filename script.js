@@ -84,13 +84,13 @@ function playRound(playerSelection, computerSelection){
         return "You win! Scissors beats Paper."
     } else if(playerSelection === 'Rock' && computerSelection === 'Paper'){
         compScore += 1;
-        return "You lose! Paper beats Rock."
+        return "You lose! Computer chose Paper."
     } else if(playerSelection === 'Paper' && computerSelection === 'Scissors'){
         compScore += 1;
-        return "You lose! Scissors beats Paper."
+        return "You lose! Computer chose Scissors."
     } else if(playerSelection === 'Scissors' && computerSelection === 'Rock'){
         compScore += 1;
-        return "You lose! Rock beats Scissors."
+        return "You lose! Computer chose Rock."
     } else {
         return `Tie Game! You both chose ${playerSelection}.`
     }
