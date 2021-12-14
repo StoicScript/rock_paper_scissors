@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(228, 228, 228);
+    font-family: helvetica;
+    text-align: center;
+}
+
+.buttons{
+    margin: 50px 0px 20px 0px;
+}
+
+.weapon{
+    margin: 5px;
+}
+
+.results{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.score{
+display: inline;
+font-weight: bold;
+}
+
+h3{
+font-weight: normal;
+text-decoration: underline;
+}
