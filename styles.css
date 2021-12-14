@@ -1,25 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    background-color: rgb(245, 245, 245);
+    background-color: #222831;
     font-family: helvetica;
     text-align: center;
+    margin: 0;
+    color: white;
 }
 
 h3{
     font-weight: normal;
     text-decoration: underline;
+    font-size: 22px;
     }
 
-p{
-    font-size: 20p;
+
+h1{
+    font-size: 50px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background-color:#111720;
+    color: white
+}
+
+.results{
+    font-weight: bold;
+    font-size: 26px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.selections{
+    display: inline-flex;
+    justify-content: center;
+    gap: 200px;
+    margin: 60px;
+}
+
+.selection{
+    font-weight: bold;
+    font-size: 120px;
+    background-color: white;
+    height: 150px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.scores{
+    display: flex;
+    width: 400px;
+    margin:auto;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 20px;
+}
+.score{
+    font-size: 30px;
+
+    gap: 10px;
 }
 
 .wpnbtn{
     margin: 5px;
     background-color: white;
+    border-radius: 5px;
 }
 
 .wpnbtn:hover{
-    border: 2.5px solid rgb(0, 0, 0);    
+    border: 2.5px solid rgb(72, 197, 135);    
+    border-radius: 5px;
     transform: scale(1.03);
 }
 
@@ -27,15 +84,10 @@ p{
     margin: 20px 0px 20px 0px;
 }
 
-.results{
-    font-weight: bold;
-    font-size: 20px;
+.winner{
+    margin: 40px;
 }
 
-.score{
-display: inline;
-font-weight: bold;
-}
 
 .resultImg{
     margin-bottom:30px;
@@ -103,4 +155,14 @@ font-weight: bold;
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+.footer{
+    background-color: #111720;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    color: white
 }
