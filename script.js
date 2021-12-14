@@ -1,6 +1,6 @@
 console.log("hello bitches")
 
-const buttons = document.querySelectorAll('.weapon')
+const weapons = document.querySelectorAll('.weapon')
 const results = document.getElementById('results')
 const player = document.getElementById('playerScore')
 const computer = document.getElementById('computerScore')
@@ -15,9 +15,9 @@ computer.innerText = `Computer: ${compScore}`;
 results.innerText = 'Select your weapon to begin!'
 resetBtn.hidden = true;
 
-buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-         let selection = e.target.textContent;
+weapons.forEach(weapon => {
+    weapon.addEventListener('click', (e) => {
+         let selection = e.target.id;
          let compSelection = computerSelection();
          results.textContent = (playRound(selection, compSelection));
          console.log(playerScore, compScore);
@@ -41,12 +41,12 @@ resetBtn.addEventListener('click', () => {
     computer.innerText = `Computer: ${compScore}`;
     results.innerText = 'Select your weapon to begin!'
     winner.innerText = ''
-    buttons.forEach(button => button.hidden = false)
+    weapons.forEach(weapon => weapon.hidden = false)
     resetBtn.hidden = true;
 })
 
 function reset(){
-    buttons.forEach(button => button.hidden = true)
+    weapons.forEach(weapon => weapon.hidden = true)
     resetBtn.hidden = false;
 }
 
